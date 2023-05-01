@@ -1,29 +1,24 @@
 package com.clase1.marvelprojectapi;
 
+import android.os.Bundle;
+import android.util.Log;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
-import android.annotation.SuppressLint;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.os.Bundle;
-import android.util.Log;
 
 import com.clase1.marvelprojectapi.model.MarvelService;
 import com.clase1.marvelprojectapi.model.Result;
 import com.clase1.marvelprojectapi.model.Root;
 
-import java.net.MalformedURLException;
-import java.net.URL;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
     private MarvelService service = null;
-    final String PUBLIC_API_KEY = "502d6509cdb6d800b2374d6f4fb7698d";
+    final String PUBLIC_API_KEY = "141984a82adc1216b83566018afb595c";
     final String TS = "1";
-    final String HASH = "b77a90841ab448f028fe4a42926c7197";
+    final String HASH = "a645b76e297f4fc32017665574f83840";
 
     RecyclerView recyclerView;
     private listAdapter listaAdapt;
@@ -41,11 +36,11 @@ public class MainActivity extends AppCompatActivity {
 
         service = new MarvelService(PUBLIC_API_KEY, TS, HASH);
 
-        this.getSuperHeroInfo();
+        this.getInfo();
 
 
     }
-    public void getSuperHeroInfo() {
+    public void getInfo() {
         service.requestSuperHeroData((isNetworkError, statusCode, root) -> {
             if (!isNetworkError) {
                 if (statusCode == 200) {

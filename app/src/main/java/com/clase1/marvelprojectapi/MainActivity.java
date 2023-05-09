@@ -16,9 +16,9 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
 
     private MarvelService service = null;
-    final String PUBLIC_API_KEY = "141984a82adc1216b83566018afb595c";
+    final String PUBLIC_API_KEY = "502d6509cdb6d800b2374d6f4fb7698d";
     final String TS = "1";
-    final String HASH = "a645b76e297f4fc32017665574f83840";
+    final String HASH = "b77a90841ab448f028fe4a42926c7197";
 
     RecyclerView recyclerView;
     private listAdapter listaAdapt;
@@ -37,7 +37,6 @@ public class MainActivity extends AppCompatActivity {
         service = new MarvelService(PUBLIC_API_KEY, TS, HASH);
 
         this.getInfo();
-
 
     }
     public void getInfo() {
@@ -60,7 +59,6 @@ public class MainActivity extends AppCompatActivity {
             ArrayList<Result> listPokemon = (ArrayList<Result>) root.getData().getResults();
             listaAdapt.adicionarLista(listPokemon);
         });
-
     }
 
 }
